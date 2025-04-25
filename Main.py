@@ -39,18 +39,12 @@ class BookingSystem:
                     case 1:
                         self.airline.list_flights()
                     case 2:
-                        flight = input("Kérem adja meg járatszámot a foglaláshoz: ")
-                        if flight == self.airline.flights[0].flight_number[1]:
-                            return self.airline.book_by_flight_number(flight)
-                        else:
-                            print("Nincs ilyen járat! Kérem pontosan adja meg a járatszámot, figyeljen a nagy kezdőbetűre!")
+                        flight = input("Kérem adja meg járatszámot a foglaláshoz: ").strip()
+                        self.airline.book_by_flight_number(flight)
 
                     case 3:
-                        flight = input("Kérem adja meg a lemondani kívánt járat számát: ")
-                        if flight == self.airline.flights[0].flight_number[1]:
-                            return self.airline.unbook_by_flight_number(flight)
-                        else:
-                            print("Nincs ilyen foglalása, vagy rosszul adta meg a járatszámot!")
+                        flight = input("Kérem adja meg a lemondani kívánt járat számát: ").strip()
+                        self.airline.unbook_by_flight_number(flight)
 
                     case 0:
                         print("Kilépés a programból.")
