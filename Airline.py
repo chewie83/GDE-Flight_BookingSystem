@@ -22,7 +22,7 @@ class Airline:
                   f"Arrival: {flight.arrival_airport}, Departure date: {flight.departure_date}, "
                   f"Price: {flight.price}, Booked: {'Yes' if flight.is_booked else 'No'}")
 
-        def book_by_flight_number(self, flight_number):
+    def book_by_flight_number(self, flight_number):
         for flight in self._flights:
             if flight.flight_number == flight_number:
                 if flight.is_booked:
